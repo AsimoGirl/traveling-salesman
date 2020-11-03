@@ -1,4 +1,0 @@
-package grafica
-
-class Ciudad {
-}
