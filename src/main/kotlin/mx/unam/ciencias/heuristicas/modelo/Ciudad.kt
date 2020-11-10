@@ -1,4 +1,4 @@
-package mx.unam.ciencias.heuristicas.grafica
+package mx.unam.ciencias.heuristicas.modelo
 /**
  * Declaramos nuestra clase ciudad que almacenará la información de las ciudades de nuestro problema.
  *
