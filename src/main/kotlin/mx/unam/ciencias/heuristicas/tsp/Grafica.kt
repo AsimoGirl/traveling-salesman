@@ -11,45 +11,46 @@ import kotlin.math.*
  *
  *
  */
-class Grafica(ciudades: ArrayList<Ciudad>){
+class Grafica(ciudades: ArrayList<Ciudad>, citiesIdsString: String){
     private val numVertices = ciudades.size
     private val ciudades = ciudades
-    val distanciaMax = maxD()
+    private val todasDistancias = DAO(citiesIdsString).getDistancia()
     private val distancias = getDistancias()
+    val distanciaMax = maxD()
     val normalizador = n()
     private val matrizAdj = ws()
 
-    /** Devuelve todas las posibles distancias */
-    fun getDistancias(): ArrayList<Double>{
-        val distancias = arrayListOf<Double>()
-        var u :Int
-        var v: Int
-        var distActual: Double
-        for (i in 0 until numVertices-1){
-            u = ciudades[i].id
-            for(j in 1 until numVertices){
-                v = ciudades[j].id
-                distActual = DAO.getDistancia(u, v)
-                if (distActual > -1){
-                    distancias.add(distActual)
-                }
+    fun getValorLista(idU: Int, idV:Int): Double{
+        for (i in todasDistancias){
+            if ((i.idCity1 == idU && i.idCity2 == idV) || (i.idCity2 == idU && i.idCity1 == idV)){
+                return i.distance
             }
         }
-        /**
+        return -1.0
+    }
+
+    /** Devuelve todas las posibles distancias */
+    fun getDistancias(): ArrayList<Double>{
+        val todasDistancias = arrayListOf<Double>()
+        var u :Int
+        var v: Int
+        var i = 0
+        var j = 1
+        var distActual: Double
         while (i < numVertices - 1) {
             u = ciudades[i].id
             j = i + 1
             while(j < numVertices){
                 v = ciudades[j].id
-                distActual = DAO.getDistancia(u, v)
+                distActual = getValorLista(u, v)
                 if (distActual > -1){
-                    distancias.add(distActual)
+                    todasDistancias.add(distActual)
                 }
                 j++
             }
             i++
-        }*/
-        return distancias
+        }
+        return todasDistancias
     }
 
     /** Obtiene la distancia Máxima*/
@@ -60,9 +61,13 @@ class Grafica(ciudades: ArrayList<Ciudad>){
     /** Obtiene la normalización*/
     fun n(): Double{
         var normalizador = 0.0
+        var a = 0
         Collections.sort(distancias, Collections.reverseOrder())
-        for (i in 0 until distancias.size - 2) {
-            normalizador += distancias[i];
+        for (i in distancias) {
+            if (a >= numVertices-1)
+                break;
+            normalizador += i
+            a++
         }
         return normalizador
     }
@@ -93,7 +98,7 @@ class Grafica(ciudades: ArrayList<Ciudad>){
             val u: Ciudad = ciudades[i]
             for (j in 1 until numVertices) {
                 val v: Ciudad = ciudades[j]
-                distancia = DAO.getDistancia(u.id, v.id)
+                distancia = getValorLista(u.id, v.id)
                 if (distancia > -1) {
                     matrizAdj[i][j] = distancia
                     matrizAdj[j][i] = distancia
@@ -114,8 +119,8 @@ class Grafica(ciudades: ArrayList<Ciudad>){
         var indexU: Int
         var indexV: Int
         for (i in 0 until ruta.size - 1) {
-            indexU = ciudades.indexOf(i)
-            indexV = ciudades.indexOf(i+1)
+            indexU = ciudades.indexOf(ciudades[i])
+            indexV = ciudades.indexOf(ciudades[i+1])
             suma += matrizAdj[indexU][indexV]
         }
         return suma / normalizador

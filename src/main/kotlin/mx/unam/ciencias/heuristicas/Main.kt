@@ -1,3 +1,4 @@
+@file:JvmName("Main")
 package mx.unam.ciencias.heuristicas
 
 import mx.unam.ciencias.heuristicas.DAO
@@ -9,16 +10,23 @@ import kotlin.collections.ArrayList
 import kotlin.random.Random
 
 fun main(args: Array<String>) {
-  val citiesInput = File(args[0]).readLines()[0]
-  val seedInput = (args[1]).toInt()
-  val ciudades1 = ArrayList<Ciudad>()
+  //val citiesInput = File(args[0]).readLines()[0]
+  //val seedInput = (args[1]).toInt()
+  val citiesInput = File("input/instancia-150.txt").readLines()[0]
   val citiesIds = ArrayList(citiesInput.split(",").map { it.toInt() })
-  for (i in citiesIds){
-    ciudades1.add(DAO.getCiudad(i))
+  var citiesIdsString = ""
+  for(i in 0 until citiesIds.size)
+  {
+    var a = citiesIds[i].toString()
+    citiesIdsString += if (i < citiesIds.size - 1) {
+      "\'$a\', "
+    } else {
+      "\'$a\'"
+    }
   }
-  val graf1 = Grafica(ciudades1)
-  val solucion1 = Solucion(citiesIds, Random(seedInput))
+  val ciudades1 = DAO(citiesIdsString).getCiudades()
+  val graf1 = Grafica(ciudades1, citiesIdsString)
+  val solucion1 = Solucion(citiesIds, Random(44001))
   val number1 = graf1.f(solucion1)
-  println("Probamos ahora")
-  println(number1)
+  println("Función de costo : $number1")
 }
