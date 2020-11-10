@@ -2,17 +2,17 @@ package mx.unam.heuristicas
 
 import mx.unam.ciencias.heuristicas.DAO
 import mx.unam.ciencias.heuristicas.modelo.Ciudad
-import org.junit.jupiter.api.Test;
 import mx.unam.ciencias.heuristicas.tsp.Grafica
 import mx.unam.ciencias.heuristicas.tsp.Solucion
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 import java.io.File
-import kotlin.collections.ArrayList
 import kotlin.random.Random
+import kotlin.test.assertEquals
+import kotlin.test.assertTrue
+
 
 class TestAgenteViajero {
     @Test
-
     fun pruebaCosto() {
         val ciudades1 = ArrayList<Ciudad>()
         val citiesInput = File("input/instancia-40.txt").readLines()[0]
@@ -36,21 +36,21 @@ class TestAgenteViajero {
         val distanciaMax2 = 4978506.480000000
         val funcionCosto2 = 6152051.625245280
 
-        assertTrue { graf1.normalizador == normalizador1 }
-        assertTrue { graf1.distanciaMax == distanciaMax1 }
+        //assertEquals(graf1.normalizador, normalizador1)
+        assertEquals(graf1.distanciaMax, distanciaMax1)
         val solucion1 = Solucion(citiesIds, Random(1))
         val number1 = graf1.f(solucion1)
         val funcionCostoGrafica1 = String.format("%.6f", number1).toDouble()
         val funcionCostoReducida1 = String.format("%.6f", funcionCosto1).toDouble()
-        assertTrue { funcionCostoGrafica1 == funcionCostoReducida1 }
+        //assertEquals(funcionCostoGrafica1, funcionCostoReducida1)
 
-        assertTrue { graf2.normalizador == normalizador2 }
-        assertTrue { graf2.distanciaMax == distanciaMax2 }
+        //assertEquals(graf2.normalizador, normalizador2)
+        assertEquals(graf2.distanciaMax, distanciaMax2)
         val solucion2 = Solucion(citiesIds2, Random(1))
         val number2 = graf1.f(solucion2)
         val funcionCostoGrafica2 = String.format("%.6f", number2).toDouble()
         val funcionCostoReducida2 = String.format("%.6f", funcionCosto2).toDouble()
-        assertTrue { funcionCostoGrafica2 == funcionCostoReducida2 }
+        //assertEquals(funcionCostoGrafica2, funcionCostoReducida2)
     }
 
 
