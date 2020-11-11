@@ -13,7 +13,7 @@ import kotlin.test.assertTrue
 
 class TestAgenteViajero {
     @Test
-    fun pruebaCosto() {
+    fun pruebaCosto40() {
         val citiesInput = File("input/instancia-40.txt").readLines()[0]
         val citiesIds = ArrayList(citiesInput.split(",").map { it.toInt() })
         var citiesIds1S = ""
@@ -39,14 +39,17 @@ class TestAgenteViajero {
         val funcionCostoGrafica1 = String.format("%.6f", number1).toDouble()
         val funcionCostoReducida1 = String.format("%.6f", funcionCosto1).toDouble()
         assertEquals(funcionCostoGrafica1, funcionCostoReducida1)
+    }
 
+    @Test
+    fun pruebaCosto150() {
         val citiesInput2 = File("input/instancia-150.txt").readLines()[0]
         val citiesIds2 = ArrayList(citiesInput2.split(",").map { it.toInt() })
         var citiesIds2S = ""
-        for(i in 0 until citiesIds.size)
+        for(i in 0 until citiesIds2.size)
         {
-            var a = citiesIds[i].toString()
-            citiesIds1S += if (i < citiesIds2.size - 1) {
+            var a = citiesIds2[i].toString()
+            citiesIds2S += if (i < citiesIds2.size - 1) {
                 "\'$a\', "
             } else {
                 "\'$a\'"

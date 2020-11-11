@@ -5,6 +5,7 @@ import mx.unam.ciencias.heuristicas.DAO
 import mx.unam.ciencias.heuristicas.modelo.Ciudad
 import mx.unam.ciencias.heuristicas.tsp.Grafica
 import mx.unam.ciencias.heuristicas.tsp.Solucion
+import mx.unam.ciencias.heuristicas.umbrales.Heuristica
 import java.io.File
 import kotlin.collections.ArrayList
 import kotlin.random.Random
@@ -27,6 +28,12 @@ fun main(args: Array<String>) {
   val ciudades1 = DAO(citiesIdsString).getCiudades()
   val graf1 = Grafica(ciudades1, citiesIdsString)
   val solucion1 = Solucion(citiesIds, Random(44001))
-  val number1 = graf1.f(solucion1)
-  println("Función de costo : $number1")
+  val tsp = Heuristica(graf1, solucion1)
+  tsp.temperaturaInicial()
+  tsp.aceptacionPorUmbrales()
+  println("Path: ${tsp.ruta()}")
+  println("Evaluation: ${tsp.evaluacion()}")
+  println("Feasible: ${tsp.esFactible()}")
+  println("---------------------------------------------\n")
+
 }
