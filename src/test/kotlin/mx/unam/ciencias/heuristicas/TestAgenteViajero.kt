@@ -12,6 +12,7 @@ import kotlin.test.assertTrue
 
 
 class TestAgenteViajero {
+    /**
     @Test
     fun pruebaCosto40() {
         val citiesInput = File("input/instancia-40.txt").readLines()[0]
@@ -70,7 +71,7 @@ class TestAgenteViajero {
         assertEquals(funcionCostoGrafica2, funcionCostoReducida2)
 
     }
-
+    **/
 
 
 

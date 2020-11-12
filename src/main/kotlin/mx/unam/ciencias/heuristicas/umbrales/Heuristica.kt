@@ -15,39 +15,39 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
     /** Initial system temperature */
     var T = 8.0
     /** Upper bound for iterations when calculating a batch */
-    val L = 2
+    val L = 2000
     /** Cooling factor that determines how slow or fast the temperature [T] it's going to decrease */
     val phi = 0.9
     /** Percentage */
     val P = 0.5
     /**  Value of accepted neighbors used when calculating the initial temperature. */
-    val vecinosAceptados = 10
+    val vecinosAceptados = 1000
     /** Maximum number of attempts when calculating a batch. */
     val maxIteraciones = L * 4
 
-    private var mejorSolucionActual: Solucion = solucionActual
-    fun calculaLote(T: Double): Pair<Double, Solucion> {
+
+    var mejorSolucionActual: Solucion = solucionActual
+    fun calculaLote(T: Double): Double {
         var c = 0
         var r = 0.0
         var i = 0
-        var s = solucionActual
         while (c < L && i < maxIteraciones) {
-            println("c: $c")
-            println("L: $L")
-            println("i: $i")
-            val triada = s.generaVecino(g)
-            val rutaActual = triada.ruta
-            val nuevoCosto = triada.costo
-            val costoAntiguo = s.costo
+            val par = solucionActual.generaVecino()
+            val indices = par.first
+            val nuevaRuta = par.second
+            val indiceI = indices.first
+            val indiceJ = indices.second
+            val rutaActual = solucionActual.ruta
+            val costoAntiguo = solucionActual.costo
+            val nuevoCosto = g.getCostoOptimizado(indiceI, indiceJ, costoAntiguo, rutaActual)
+
             if (nuevoCosto <= costoAntiguo + T) {
-                s.costo = nuevoCosto
-                s.ruta = rutaActual
+                solucionActual.costo = nuevoCosto
+                solucionActual.ruta = rutaActual
                 val costoMinimo = mejorSolucionActual.costo
                 if(nuevoCosto <= costoMinimo){
-                    val rutaMinima = solucionActual.ruta
-                    mejorSolucionActual.ruta = rutaMinima
+                    mejorSolucionActual.ruta = solucionActual.ruta
                     mejorSolucionActual.costo = nuevoCosto
-                    println("E: " + nuevoCosto)
                 }
                 c++
                 r += nuevoCosto
@@ -55,7 +55,7 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
                 i++
             }
         }
-        return Pair(r / L, s)
+        return r / L
     }
 
     fun aceptacionPorUmbrales(){
@@ -65,8 +65,9 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
             var q = Double.POSITIVE_INFINITY
             while(p <= q){
                 q = p
-                val p = calculaLote(T)
+                p = calculaLote(T)
             }
+            println("E: ${mejorSolucionActual.costo}")
             T *= phi
         }
     }
@@ -100,19 +101,23 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
 
     fun porcentajeAceptado(s: Solucion, T: Double): Double{
         var c = 0.0
-        var nuevaSolucion: Solucion
-        var current: Solucion = s
+        var current = s
 
         var currentCost: Double
         var newCost: Double
 
         for (i in 0 until vecinosAceptados) {
-            nuevaSolucion = current.generaVecino(g)
-            currentCost = current.costo
-            newCost = nuevaSolucion.costo
+            val parVecino = current.generaVecino()
+            var nuevaSolucion = parVecino.second
+            val indicesVecino = parVecino.first
+            val indiceI = indicesVecino.first
+            val indiceJ = indicesVecino.second
+            currentCost = solucionActual.costo
+            val currentRute = solucionActual.ruta
+            newCost = g.getCostoOptimizado(indiceI, indiceJ,  currentCost, currentRute)
             if (newCost <= currentCost + T) {
                 current.costo = newCost
-                current.ruta = nuevaSolucion.ruta
+                current.ruta = nuevaSolucion
                 c++
             }
         }

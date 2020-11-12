@@ -11,9 +11,10 @@ import kotlin.collections.ArrayList
 import kotlin.random.Random
 
 fun main(args: Array<String>) {
-  //val citiesInput = File(args[0]).readLines()[0]
-  //val seedInput = (args[1]).toInt()
-  val citiesInput = File("input/instancia-40.txt").readLines()[0]
+  val citiesInput = File(args[0]).readLines()[0]
+  val seedS = (args[1]).toInt()
+  val seedF = (args[2]).toInt()
+  //val citiesInput = File("input/instancia-40.txt").readLines()[0]
   val citiesIds = ArrayList(citiesInput.split(",").map { it.toInt() })
   var citiesIdsString = ""
   for(i in 0 until citiesIds.size)
@@ -25,16 +26,21 @@ fun main(args: Array<String>) {
       "\'$a\'"
     }
   }
+  println("Ciudades: $citiesIds")
   val ciudades1 = DAO(citiesIdsString).getCiudades()
   val graf1 = Grafica(ciudades1, citiesIdsString)
   val costoInicial = graf1.f(citiesIds)
-  val solucion1 = Solucion(citiesIds, Random(4), costoInicial)
-  val tsp = Heuristica(graf1, solucion1)
-  tsp.temperaturaInicial()
-  tsp.aceptacionPorUmbrales()
-  println("Ruta: ${tsp.ruta()}")
-  println("Costo: ${tsp.evaluacion()}")
-  println("¿Es Factible?: ${tsp.esFactible()}")
-  println("---------------------------------------------\n")
+  println("Costo Inicial: $costoInicial")
+  for (i in seedS until seedF + 1)  {
+    println("Semilla: $i")
+    val solucion1 = Solucion(citiesIds, Random(i), costoInicial)
+    val tsp = Heuristica(graf1, solucion1)
+    tsp.temperaturaInicial()
+    tsp.aceptacionPorUmbrales()
+    println("Ruta: ${tsp.ruta()}")
+    println("Costo: ${tsp.evaluacion()}")
+    println("¿Es Factible?: ${tsp.esFactible()}")
+    println("---------------------------------------------\n")
+  }
 
 }

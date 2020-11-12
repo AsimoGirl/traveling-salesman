@@ -45,9 +45,10 @@ run {
     standardInput = System.in
 
     // We must pass these as flags to read those files.
-    if (project.hasProperty("cities") && project.hasProperty("seed")) {
+    if (project.hasProperty("cities") && project.hasProperty("seedS") && project.hasProperty("seedF")) {
         args findProperty('cities')
-        args findProperty('seed')
+        args findProperty('seedS')
+        args findProperty('seedF')
     }
 }
 

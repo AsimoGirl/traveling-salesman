@@ -4,6 +4,7 @@ import mx.unam.ciencias.heuristicas.DAO
 import mx.unam.ciencias.heuristicas.modelo.Ciudad
 import mx.unam.ciencias.heuristicas.tsp.Solucion
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.math.*
 
 /**
@@ -129,5 +130,46 @@ class Grafica(val ciudades: ArrayList<Ciudad>, citiesIdsString: String){
             suma += matrizAdj[indexU][indexV]
         }
         return suma / normalizador
+    }
+
+    fun getCostoOptimizado(uIndex:Int, vIndex:Int, costo: Double, ruta: ArrayList<Int>) :Double{
+        //Inicia la optimización
+        // e0 = (i-1, i)
+        // e1 = (i, i+1)
+        // e2 = (j-1, j)
+        // e3 = (j, j+1)
+        // So the new cost consist of substracting the
+        // weight of this deleted edges and adding the
+        // new ones.
+        val numCiudades = ruta.size
+        var e0Antiguo = 0.0
+        var e0Nuevo = 0.0
+        var e1Antiguo = 0.0
+        var e1Nuevo = 0.0
+        var e2Antiguo = 0.0
+        var e2Nuevo = 0.0
+        var e3Antiguo = 0.0
+        var e3Nuevo = 0.0
+
+        if (uIndex > 0 && vIndex != uIndex-1) {
+            e0Antiguo = getPeso(ruta[uIndex-1], ruta[uIndex])
+            e0Nuevo   = getPeso(ruta[uIndex-1], ruta[vIndex])
+        }
+        if (uIndex < numCiudades - 1 && vIndex != uIndex + 1) {
+            e1Antiguo = getPeso(ruta[uIndex], ruta[uIndex+1])
+            e1Nuevo   = getPeso(ruta[vIndex], ruta[uIndex+1])
+        }
+        if (vIndex > 0 && uIndex != vIndex-1) {
+            e2Antiguo = getPeso(ruta[vIndex-1], ruta[vIndex])
+            e2Nuevo   = getPeso(ruta[vIndex-1], ruta[uIndex])
+        }
+        if (vIndex < numCiudades - 1 && uIndex != vIndex + 1) {
+            e3Antiguo = getPeso(ruta[vIndex], ruta[vIndex+1])
+            e3Nuevo   = getPeso(ruta[uIndex], ruta[vIndex+1])
+        }
+
+        val sumaNuevos = e0Nuevo + e1Nuevo + e2Nuevo + e3Nuevo
+        val sumaPrevios = e0Antiguo + e1Antiguo + e2Antiguo + e3Antiguo
+        return costo + ((sumaNuevos - sumaPrevios)/normalizador)
     }
 }
