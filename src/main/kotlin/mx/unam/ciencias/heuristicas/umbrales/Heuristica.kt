@@ -11,33 +11,46 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
     /** Epsilon used in Threshold Accepting heuristic */
     val epsilon = 0.001
     /** Epsilon used in the initial temperature algorithm */
-    val epsilonP = 0.0001
+    val epsilonP = 0.001
     /** Initial system temperature */
     var T = 8.0
     /** Upper bound for iterations when calculating a batch */
-    val L = 2000
+    val L = 2
     /** Cooling factor that determines how slow or fast the temperature [T] it's going to decrease */
     val phi = 0.9
     /** Percentage */
     val P = 0.5
     /**  Value of accepted neighbors used when calculating the initial temperature. */
-    val vecinosAceptados = 100
+    val vecinosAceptados = 10
     /** Maximum number of attempts when calculating a batch. */
-    val maxIteraciones = L * 42
+    val maxIteraciones = L * 4
 
-    private var mejorSolucionActual: Pair<Solucion, Double> = Pair(solucionActual, g.f(solucionActual))
-
-    fun calculaLote(T: Double, s: Solucion): Pair<Double, Solucion> {
+    private var mejorSolucionActual: Solucion = solucionActual
+    fun calculaLote(T: Double): Pair<Double, Solucion> {
         var c = 0
         var r = 0.0
         var i = 0
-        var s = s
+        var s = solucionActual
         while (c < L && i < maxIteraciones) {
-            var sPrima = s.generaVecino()
-            if (g.f(sPrima) <= g.f(s) + T) {
-                s = sPrima
+            println("c: $c")
+            println("L: $L")
+            println("i: $i")
+            val triada = s.generaVecino(g)
+            val rutaActual = triada.ruta
+            val nuevoCosto = triada.costo
+            val costoAntiguo = s.costo
+            if (nuevoCosto <= costoAntiguo + T) {
+                s.costo = nuevoCosto
+                s.ruta = rutaActual
+                val costoMinimo = mejorSolucionActual.costo
+                if(nuevoCosto <= costoMinimo){
+                    val rutaMinima = solucionActual.ruta
+                    mejorSolucionActual.ruta = rutaMinima
+                    mejorSolucionActual.costo = nuevoCosto
+                    println("E: " + nuevoCosto)
+                }
                 c++
-                r += g.f(s)
+                r += nuevoCosto
             } else {
                 i++
             }
@@ -52,15 +65,7 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
             var q = Double.POSITIVE_INFINITY
             while(p <= q){
                 q = p
-                val ps = calculaLote(T, solucionActual)
-                p = ps.first
-                solucionActual = ps.second
-                /** Hacemos que siempre imprima la mejor solución*/
-                if (min > g.f(solucionActual)) {
-                    mejorSolucionActual = Pair(solucionActual, g.f(solucionActual))
-                    min = g.f(solucionActual)
-                    println("E: " + g.f(solucionActual))
-                }
+                val p = calculaLote(T)
             }
             T *= phi
         }
@@ -76,7 +81,7 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
         }
         if(p < P){
             while(p < P){
-                T = 2 * T
+                T *= 2
                 p = porcentajeAceptado(s, T)
             }
             T1 = T / 2
@@ -84,7 +89,7 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
         }
         else{
             while(p > P){
-                T = T / 2
+                T /= 2
                 p = porcentajeAceptado(s, T)
             }
             T1 = T
@@ -102,12 +107,13 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
         var newCost: Double
 
         for (i in 0 until vecinosAceptados) {
-            nuevaSolucion = current.generaVecino()
-            currentCost = g.f(current)
-            newCost = g.f(nuevaSolucion)
+            nuevaSolucion = current.generaVecino(g)
+            currentCost = current.costo
+            newCost = nuevaSolucion.costo
             if (newCost <= currentCost + T) {
+                current.costo = newCost
+                current.ruta = nuevaSolucion.ruta
                 c++
-                current = nuevaSolucion
             }
         }
 
@@ -134,19 +140,19 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
      *
      * @return a list of the solution.
      */
-    fun ruta(): ArrayList<Int> = mejorSolucionActual.first.ruta
+    fun ruta(): ArrayList<Int> = mejorSolucionActual.ruta
 
     /**
      *
      *
      * @return the evaluation of the path
      */
-    fun evaluacion(): Double = mejorSolucionActual.second
+    fun evaluacion(): Double = mejorSolucionActual.costo
 
     /**
      * TODO
      *
      * @return
      */
-    fun esFactible(): Boolean = mejorSolucionActual.second <= 1
+    fun esFactible(): Boolean = mejorSolucionActual.costo <= 1
 }

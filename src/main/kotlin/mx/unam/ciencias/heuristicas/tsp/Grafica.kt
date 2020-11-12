@@ -11,14 +11,13 @@ import kotlin.math.*
  *
  *
  */
-class Grafica(ciudades: ArrayList<Ciudad>, citiesIdsString: String){
+class Grafica(val ciudades: ArrayList<Ciudad>, citiesIdsString: String){
     private val numVertices = ciudades.size
-    private val ciudades = ciudades
     private val todasDistancias = DAO(citiesIdsString).getDistancia()
     private val distancias = getDistancias()
     val distanciaMax = maxD()
     val normalizador = n()
-    private val matrizAdj = ws()
+    val matrizAdj = ws()
 
     fun getValorLista(idU: Int, idV:Int): Double{
         for (i in todasDistancias){
@@ -27,6 +26,12 @@ class Grafica(ciudades: ArrayList<Ciudad>, citiesIdsString: String){
             }
         }
         return -1.0
+    }
+
+    fun getPeso(idI: Int, idU: Int): Double{
+        val i = ciudades.indexOfFirst{ it.id == idI}
+        val j = ciudades.indexOfFirst{ it.id == idU}
+        return matrizAdj[i][j]
     }
 
     /** Devuelve todas las posibles distancias */
@@ -113,8 +118,8 @@ class Grafica(ciudades: ArrayList<Ciudad>, citiesIdsString: String){
     }
 
     /** Función de costo*/
-    fun f(v: Solucion) :Double{
-        val ruta = v.ruta
+    fun f(v: ArrayList<Int>) :Double{
+        val ruta = v
         var suma = 0.0
         var indexU: Int
         var indexV: Int

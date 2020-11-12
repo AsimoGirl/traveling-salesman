@@ -13,7 +13,7 @@ import kotlin.random.Random
 fun main(args: Array<String>) {
   //val citiesInput = File(args[0]).readLines()[0]
   //val seedInput = (args[1]).toInt()
-  val citiesInput = File("input/instancia-150.txt").readLines()[0]
+  val citiesInput = File("input/instancia-40.txt").readLines()[0]
   val citiesIds = ArrayList(citiesInput.split(",").map { it.toInt() })
   var citiesIdsString = ""
   for(i in 0 until citiesIds.size)
@@ -27,13 +27,14 @@ fun main(args: Array<String>) {
   }
   val ciudades1 = DAO(citiesIdsString).getCiudades()
   val graf1 = Grafica(ciudades1, citiesIdsString)
-  val solucion1 = Solucion(citiesIds, Random(44001))
+  val costoInicial = graf1.f(citiesIds)
+  val solucion1 = Solucion(citiesIds, Random(4), costoInicial)
   val tsp = Heuristica(graf1, solucion1)
   tsp.temperaturaInicial()
   tsp.aceptacionPorUmbrales()
-  println("Path: ${tsp.ruta()}")
-  println("Evaluation: ${tsp.evaluacion()}")
-  println("Feasible: ${tsp.esFactible()}")
+  println("Ruta: ${tsp.ruta()}")
+  println("Costo: ${tsp.evaluacion()}")
+  println("¿Es Factible?: ${tsp.esFactible()}")
   println("---------------------------------------------\n")
 
 }
