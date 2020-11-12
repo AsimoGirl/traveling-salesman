@@ -43,4 +43,6 @@ fun main(args: Array<String>) {
     println("---------------------------------------------\n")
   }
   //./gradlew run -Pcities=input/instancia-40.txt -PseedS=20 -PseedF=25
+  //1 para 40
+  // 300 000 para 150
 }
