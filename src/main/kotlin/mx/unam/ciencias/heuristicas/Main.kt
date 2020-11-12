@@ -42,5 +42,5 @@ fun main(args: Array<String>) {
     println("¿Es Factible?: ${tsp.esFactible()}")
     println("---------------------------------------------\n")
   }
-
+  //./gradlew run -Pcities=input/instancia-40.txt -PseedS=20 -PseedF=25
 }

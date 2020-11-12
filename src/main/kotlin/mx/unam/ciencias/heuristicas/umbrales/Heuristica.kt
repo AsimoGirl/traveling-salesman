@@ -43,10 +43,10 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
 
             if (nuevoCosto <= costoAntiguo + T) {
                 solucionActual.costo = nuevoCosto
-                solucionActual.ruta = rutaActual
+                solucionActual.ruta = nuevaRuta
                 val costoMinimo = mejorSolucionActual.costo
                 if(nuevoCosto <= costoMinimo){
-                    mejorSolucionActual.ruta = solucionActual.ruta
+                    mejorSolucionActual.ruta = nuevaRuta
                     mejorSolucionActual.costo = nuevoCosto
                 }
                 c++
@@ -66,8 +66,8 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
             while(p <= q){
                 q = p
                 p = calculaLote(T)
+                println("E: ${mejorSolucionActual.costo}")
             }
-            println("E: ${mejorSolucionActual.costo}")
             T *= phi
         }
     }
