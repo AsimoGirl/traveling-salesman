@@ -1,15 +1,19 @@
 package mx.unam.ciencias.heuristicas.tsp
-
 import kotlin.random.Random
-
-class Solucion(
-    var ruta: ArrayList<Int>, private val random: Random, var costo: Double) {
+/**
+ * This class has no useful logic; it's just a documentation example.
+ *
+ * @property ruta the name of this group.
+ * @property random
+ * @property costo
+ * @constructor Crea una solución
+ */
+class Solucion(var ruta: ArrayList<Int>, private val random: Random, var costo: Double) {
+    /** Número de ciudades que se usan en la solución*/
     private val numCiudades = ruta.size
-
     /**
-     * TODO
-     *
-     * @return
+     * Función que obtiene el vecino de una solución
+     * @return Regresa el par de índices del vecino y los ids de la ruta nueva
      */
     fun generaVecino(): Pair<Pair<Int, Int>,ArrayList<Int>> {
         var uIndex = 0
@@ -27,8 +31,8 @@ class Solucion(
     }
 
     /**
-     * TODO
-     *
+     * Función que cambia la forma en que se muestra la ruta de la solución
+     * @return Una string que representa la solución
      */
     override fun toString(): String {
         var solucion = ""
@@ -41,6 +45,4 @@ class Solucion(
         }
         return solucion
     }
-
-
 }

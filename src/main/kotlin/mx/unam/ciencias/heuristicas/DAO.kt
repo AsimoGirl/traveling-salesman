@@ -7,25 +7,32 @@ import java.sql.DriverManager
 import java.sql.SQLException
 import java.sql.Statement
 
-/**
- * Clase que obtiene la información de la base de datos
- *
- */
-class DAO(ids: String) {
-    val ids = ids
-    val DB_URL = "jdbc:sqlite:resources/ciudades.db"
 
+/**
+ * Declaramos nuestra clase DAO que obtiene la información de la base de datos
+ *
+ * @property ids Lista de ids de las ciudades a usar
+ * @constructor Crea un DAO
+ */
+class DAO(private val ids: String) {
+    /** URL donde se encuentra la base de datos a usar*/
+    private val DB_URL = "jdbc:sqlite:resources/ciudades.db"
+
+    /**
+     * Función que obtiene la información de todas las ciudades dadas los ids
+     * @return Una lista de todos los objetos ciudades
+     */
     fun getCiudades(): ArrayList<Ciudad> {
         val connection: Connection?
         val statement: Statement?
         val ciudades = ArrayList<Ciudad>()
-        var query: String
-        var id = 0
-        var name = "Null"
-        var country = "Null"
-        var population = 0
-        var latitude = 0.0
-        var longitude = 0.0
+        val query: String
+        var id: Int
+        var name: String
+        var country: String
+        var population: Int
+        var latitude: Double
+        var longitude: Double
         try {
             connection = DriverManager.getConnection(DB_URL)
             connection.autoCommit = false
@@ -48,6 +55,10 @@ class DAO(ids: String) {
         return ciudades
     }
 
+    /**
+     * Función que obtiene la información de todas las conexiones entre las ciudades
+     * @return Una lista de todos los objetos conexion de las ciudades
+     */
     fun getDistancia(): ArrayList<Conexion> {
         val conexionesCiudad = arrayListOf<Conexion>()
         val connection: Connection?

@@ -1,12 +1,12 @@
 package mx.unam.ciencias.heuristicas.modelo
-
 /**
- * For modeling the distance between each city, in the graph that it's going to be constructed, it represents
- * the weight of the edge.
+ * Declaramos nuestra clase ciudad que almacenará la información de las distancias entre
+ * ciudades de nuestro problema.
  *
- * @property idCity1 The first city identifier.
- * @property idCity2 The second city identifier.
- * @property distance The distance of the cities.
+ * @property idCity1 El identificador de la primera ciudad.
+ * @property idCity2 El identificador de la segunda ciudad.
+ * @property distance El país donde se encuentra la ciudad.
+ * @constructor Crea un objeto conexion
  */
 data class Conexion(
     val idCity1: Int,

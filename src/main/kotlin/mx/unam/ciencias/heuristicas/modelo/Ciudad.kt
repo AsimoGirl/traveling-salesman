@@ -8,6 +8,7 @@ package mx.unam.ciencias.heuristicas.modelo
  * @property population La población de la ciudad.
  * @property latitude La latitud de la ciudad.
  * @property longitude La longitud de la ciudad.
+ * @constructor Crea un objeto ciudad
  */
 data class Ciudad(
     val id: Int,
