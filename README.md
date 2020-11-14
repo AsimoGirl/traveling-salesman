@@ -2,6 +2,9 @@
 
 Se necesita tener gradle en versión 6 o mayor
 
+### Reporte
+El reporte no se encuentra finalizado actualmente
+
 ### Generar documentación
 Para generar documentación usar ./gradlew dokkaHtml y dentro de build/dokka aparecerá la documentación
 
