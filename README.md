@@ -1,6 +1,6 @@
 # Proyecto 1 Heurísticas: Problema del agente viajero usando recocido simulado con aceptación por umbrales
 
-Se necesita tener gradle en versión 6+
+Se necesita tener gradle en versión 6 o mayor
 
 ### Generar documentación
 Para generar documentación usar ./gradlew dokkaHtml y dentro de build/dokka aparecerá la documentación
@@ -26,4 +26,4 @@ Ejemplo de ejecución si solo se quiere una semilla:
 $ ./gradlew run -Pcities=input/instancia-150.txt -PseedS=20 -PseedF=20
 ```
 
-El formato de la entrada para las ciudades debe ser como [este](input/40-cities.txt) 
+El formato de la entrada para las ciudades debe ser como los ejemplos en input
