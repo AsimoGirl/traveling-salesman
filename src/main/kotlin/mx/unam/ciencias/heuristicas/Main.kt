@@ -55,7 +55,7 @@ fun main(args: Array<String>) {
   }
   string += "Mejor Semilla: $mejorSemilla, Mejor Costo: $mejorCosto , Mejor Ruta: $mejorRuta"
   if(seedS != seedF) {
-    File("resultado/resultado-actual.txt").writeText(string)
+    File("resultado/150-semillas-optimizado.txt").writeText(string)
     println("Mejor Ruta: $mejorRuta")
     println("Mejor Costo: $mejorCosto")
   }

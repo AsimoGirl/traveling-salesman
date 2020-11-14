@@ -1,0 +1,27 @@
+/** Epsilon used in Threshold Accepting heuristic */
+EPSILON = 0.0001
+
+/** Epsilon used in the initial temperature algorithm */
+EPSILON_P = 0.0001
+
+/** Initial system temperature */
+T = 8.0
+
+/** Upper bound for iterations when calculating a batch */
+L = 2000
+
+/** Cooling factor that determines how slow or fast the temperature [T] it's
+going to decrease */
+PHI = 0.9
+
+/** Earth radius in meters */
+EARTH_RADIUS_IN_METERS = 6373000.0
+
+/** Percentage */
+P = 0.6
+
+/**  Value of accepted neighbors used when calculating the initial temperature. */
+ACCEPTED_NEIGHBORS = 100
+
+/** Maximum number of attempts when calculating a batch. */
+MAX_ITERATIONS = L * 42
