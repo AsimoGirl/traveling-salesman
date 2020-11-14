@@ -41,6 +41,7 @@ fun main(args: Array<String>) {
     println("Semilla: $i")
     val solucion1 = Solucion(citiesIds, Random(i), costoInicial)
     val tsp = Heuristica(graf1, solucion1)
+    tsp.temperaturaInicial()
     tsp.aceptacionPorUmbrales()
     if (tsp.evaluacion() <= mejorCosto){
       mejorCosto = tsp.evaluacion()
