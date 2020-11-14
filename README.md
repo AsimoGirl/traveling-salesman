@@ -2,8 +2,6 @@
 
 Se necesita tener gradle en versión 6 o mayor
 
-### Reporte
-El reporte no se encuentra finalizado actualmente
 
 ### Generar documentación
 Para generar documentación usar ./gradlew dokkaHtml y dentro de build/dokka aparecerá la documentación
@@ -30,3 +28,5 @@ $ ./gradlew run -Pcities=input/instancia-150.txt -PseedS=20 -PseedF=20
 ```
 
 El formato de la entrada para las ciudades debe ser como los ejemplos en input
+
+Dentro de la carpeta resultado/resultadosIterandoSemillas tenemos los costos con 1000 distintas semillas en las dos distancias de ejemplo, así como la mejor solución encontrada entre esas 1000.
