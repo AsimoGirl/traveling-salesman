@@ -34,43 +34,7 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
     /** Número máximo de iteraciones al calcular un lote */
     private val maxIteraciones = L * 21
     /** Variable que irá guardando la mejor solución del sistema */
-    private var mejorSolucionActual: Solucion = solucionInicial
-
-    /**
-     * Función que optimiza los resultados, revisando los vecinos de la solución
-     * @param s La solucion cuyo minimo local se le buscará
-     * @return El mínimo local de la solución
-     */
-    fun minimoLocal(s: Solucion): Solucion{
-        var esMejor = true
-        var solucionActual = s
-        var solucionMinima = s
-        val n = s.ruta.size
-        while(esMejor) {
-            esMejor = false
-            var costoActual = solucionActual.costo
-            var rutaActual = solucionActual.ruta
-            for (i in 0 until n - 2) {
-                for (j in i + 1 until n - 1) {
-                    var costoMinimo = solucionMinima.costo
-                    var nuevoCosto = g.getCostoOptimizado(i, j, costoActual, rutaActual)
-                    if (nuevoCosto < costoMinimo) {
-                        var nuevaRuta = rutaActual
-                        var aux = nuevaRuta[i]
-                        nuevaRuta[i] = nuevaRuta[j]
-                        nuevaRuta[j] = aux
-                        solucionMinima.ruta = nuevaRuta
-                        solucionMinima.costo = nuevoCosto
-                        esMejor = true
-                    }
-                }
-            }
-            if (esMejor) {
-                solucionActual = solucionMinima
-            }
-        }
-        return solucionActual
-    }
+    private var mejorSolucionActual: Solucion = solucionActual
 
     /**
      * Función que sigue el algoritmo no determinista para calcular un lote
@@ -120,7 +84,7 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
         while(T > epsilon) {
             var q = Double.POSITIVE_INFINITY
             //Mientras no haya equilibrio térmico
-            while (p <= q && q >= epsilon) {
+            while (p <= q && q != 0.0) {
                 q = p
                 p = calculaLote(T)
                 println("E: ${mejorSolucionActual.costo}")
@@ -128,7 +92,6 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
             //Se disminuye la temperatura multiplicándola con el factor de enfriamiento
             T *= phi
         }
-        //mejorSolucionActual = minimoLocal(mejorSolucionActual)
     }
 
     /**
