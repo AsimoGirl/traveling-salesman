@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.8.3)  13 NOV 2020 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.8.3)  13 NOV 2020 22:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -730,21 +730,21 @@ LaTeX Info: Redefining \% on input line 23.
 )
 \openout1 = `reporte.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 39.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -816,7 +816,7 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 
 \c@lstlisting=\count135
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 39.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -825,9 +825,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count136
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
 
 (./reporte.out) (./reporte.out)
 \@outlinefile=\write3
@@ -884,7 +884,7 @@ e
 \Gin@req@height=\dimen154
 \Gin@req@width=\dimen155
 )
-LaTeX Info: Redefining \microtypecontext on input line 40.
+LaTeX Info: Redefining \microtypecontext on input line 39.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -898,14 +898,14 @@ Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-LaTeX Info: Redefining \. on input line 40.
-LaTeX Info: Redefining \% on input line 40.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -913,7 +913,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -921,27 +921,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 42.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 42.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 42.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 43.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 59.
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 42.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
@@ -950,111 +941,152 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 111.
- (./assets/code/tuning_constants.txt
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 1.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 110.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 137.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
- [2])
-<assets/img/40-best-seed-all-evaluations.png, id=61, 642.4pt x 481.8pt>
-File: assets/img/40-best-seed-all-evaluations.png Graphic file (type png)
-<use assets/img/40-best-seed-all-evaluations.png>
-Package pdftex.def Info: assets/img/40-best-seed-all-evaluations.png  used on i
-nput line 194.
-(pdftex.def)             Requested size: 289.07733pt x 216.80798pt.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (15.75145pt too wide) in paragraph at lines 140--140
+[]\T1/cmtt/m/n/10 1,2,3,4,5,6,7,75,163,164,165,168,172,327,329,331,332,333,489,
+490,491,492,493,496,652,653,654,[] 
+ []
 
- [3]
-<assets/img/40-best-seed-decreasing-evaluations.png, id=95, 642.4pt x 481.8pt>
-File: assets/img/40-best-seed-decreasing-evaluations.png Graphic file (type png
-)
-<use assets/img/40-best-seed-decreasing-evaluations.png>
-Package pdftex.def Info: assets/img/40-best-seed-decreasing-evaluations.png  us
-ed on input line 200.
-(pdftex.def)             Requested size: 289.07733pt x 216.80798pt.
-<assets/img/tps_best_40.png, id=96, 1571.8725pt x 886.31125pt>
-File: assets/img/tps_best_40.png Graphic file (type png)
-<use assets/img/tps_best_40.png>
-Package pdftex.def Info: assets/img/tps_best_40.png  used on input line 207.
-(pdftex.def)             Requested size: 469.74255pt x 264.8676pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (15.75145pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10 Ruta: [980, 327, 871, 331, 164, 984, 491, 492, 489, 4, 817, 9
+78, 5, 6, 165, 3, 333, 981, 820,[] 
+ []
 
- [4 <./assets/img/40-best-seed-all-evaluations.png (PNG copy)> <./assets/img/40
--best-seed-decreasing-evaluations.png (PNG copy)>]
-<assets/img/150-best-seed-all-evaluations.png, id=104, 642.4pt x 481.8pt>
-File: assets/img/150-best-seed-all-evaluations.png Graphic file (type png)
-<use assets/img/150-best-seed-all-evaluations.png>
-Package pdftex.def Info: assets/img/150-best-seed-all-evaluations.png  used on 
-input line 244.
-(pdftex.def)             Requested size: 289.07733pt x 216.80798pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (15.75145pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10 332, 982, 816, 823, 7, 654, 490, 653, 656, 2, 661, 657, 168, 
+1, 815, 496, 172, 163, 329, 493,[] 
+ []
 
- [5 <./assets/img/tps_best_40.png>]
-<assets/img/150-best-seed-decreasing-evaluations.png, id=111, 642.4pt x 481.8pt
->
-File: assets/img/150-best-seed-decreasing-evaluations.png Graphic file (type pn
-g)
-<use assets/img/150-best-seed-decreasing-evaluations.png>
-Package pdftex.def Info: assets/img/150-best-seed-decreasing-evaluations.png  u
-sed on input line 250.
-(pdftex.def)             Requested size: 289.07733pt x 216.80798pt.
-<assets/img/tsp_best_150.png, id=112, 1625.07124pt x 865.2325pt>
-File: assets/img/tsp_best_150.png Graphic file (type png)
-<use assets/img/tsp_best_150.png>
-Package pdftex.def Info: assets/img/tsp_best_150.png  used on input line 257.
-(pdftex.def)             Requested size: 469.746pt x 250.10565pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (31.4976pt too wide) in paragraph at lines 160--160
+[]\T1/cmtt/m/n/10 1,2,3,4,5,6,7,8,9,11,12,14,16,17,19,20,22,23,25,26,27,74,75,1
+51,163,164,165,166,167,168,169,171,[] 
+ []
 
- [6 <./assets/img/150-best-seed-all-evaluations.png (PNG copy)> <./assets/img/1
-50-best-seed-decreasing-evaluations.png (PNG copy)>] (./reporte.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
- [7 <./assets/img/tsp_best_150.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
+
+Overfull \hbox (31.23517pt too wide) in paragraph at lines 160--160
+[]\T1/cmtt/m/n/10 172,173,174,176,179,181,182,183,184,185,186,187,297,326,327,3
+28,329,330,331,332,333,334,336,339,[] 
+ []
+
+
+Overfull \hbox (31.4976pt too wide) in paragraph at lines 160--160
+[]\T1/cmtt/m/n/10 340,343,344,345,346,347,349,350,351,352,353,444,483,489,490,4
+91,492,493,494,495,496,499,500,501,[] 
+ []
+
+
+Overfull \hbox (31.4976pt too wide) in paragraph at lines 160--160
+[]\T1/cmtt/m/n/10 502,504,505,507,508,509,510,511,512,520,652,653,654,655,656,6
+57,658,660,661,662,663,665,666,667,[] 
+ []
+
+
+Overfull \hbox (31.4976pt too wide) in paragraph at lines 160--160
+[]\T1/cmtt/m/n/10 668,670,671,673,674,675,676,678,815,816,817,818,819,820,821,8
+22,823,825,826,828,829,832,837,839,[] 
+ []
+
+
+Overfull \hbox (23.62453pt too wide) in paragraph at lines 160--160
+[]\T1/cmtt/m/n/10 840,871,978,979,980,981,982,984,985,986,988,990,991,995,999,1
+001,1003,1004,1037,1038,1073,1075[] 
+ []
+
+
+Overfull \hbox (21.00017pt too wide) in paragraph at lines 174--174
+[]\T1/cmtt/m/n/10 Ruta: [350, 840, 151, 828, 12, 1038, 340, 502, 339, 675, 186,
+ 520, 16, 671, 179, 183, 346, 17,[] 
+ []
+
+
+Overfull \hbox (36.48389pt too wide) in paragraph at lines 174--174
+[]\T1/cmtt/m/n/10 164, 11, 501, 499, 347, 817, 23, 176, 668, 352, 978, 6, 5, 10
+04, 22, 185, 991, 333, 27, 353, 990,[] 
+ []
+
+
+Overfull \hbox (36.48389pt too wide) in paragraph at lines 174--174
+[]\T1/cmtt/m/n/10 171, 652, 1075, 483, 512, 821, 75, 444, 826, 511, 504, 825, 5
+00, 985, 674, 999, 8, 662, 331, 837,[] 
+ []
+
+
+Overfull \hbox (21.00017pt too wide) in paragraph at lines 174--174
+[]\T1/cmtt/m/n/10 979, 493, 509, 329, 839, 2, 656, 667, 184, 507, 7, 823, 678, 
+816, 187, 982, 14, 181, 332, 345,[] 
+ []
+
+[2]
+Overfull \hbox (21.00017pt too wide) in paragraph at lines 174--174
+[]\T1/cmtt/m/n/10 820, 26, 654, 653, 344, 490, 676, 665, 673, 173, 815, 1, 829,
+ 832, 661, 663, 657, 508, 986, 9,[] 
+ []
+
+
+Overfull \hbox (41.7326pt too wide) in paragraph at lines 174--174
+[]\T1/cmtt/m/n/10 168, 505, 19, 496, 182, 172, 163, 351, 981, 3, 165, 988, 174,
+ 4, 489, 25, 492, 491, 984, 995, 349,[] 
+ []
+
+
+Overfull \hbox (46.98132pt too wide) in paragraph at lines 174--174
+[]\T1/cmtt/m/n/10 1003, 334, 871, 343, 510, 660, 20, 327, 670, 336, 980, 297, 1
+001, 74, 822, 166, 658, 666, 818, 655,[] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
+[3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
  (./reporte.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
 Package rerunfilecheck Info: File `reporte.out' has not changed.
 (rerunfilecheck)             Checksum: 554092872D5A8621DB7666D0AEB46411;500.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 183.
  ) 
 Here is how much of TeX's memory you used:
- 12223 strings out of 492982
- 178292 string characters out of 6134897
- 420034 words of memory out of 5000000
- 15420 multiletter control sequences out of 15000+600000
- 49676 words of font info for 113 fonts, out of 8000000 for 9000
+ 11823 strings out of 492982
+ 173689 string characters out of 6134897
+ 408892 words of memory out of 5000000
+ 15115 multiletter control sequences out of 15000+600000
+ 45209 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,45p,269b,1790s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/t
+ 42i,10n,45p,269b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
-es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on reporte.pdf (7 pages, 2902325 bytes).
+share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on reporte.pdf (3 pages, 151649 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
- 54 named destinations out of 1000 (max. 500000)
- 21087 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 114 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 16961 words of extra memory for PDF output out of 17280 (max. 10000000)
 

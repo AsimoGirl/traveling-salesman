@@ -41,6 +41,7 @@ fun main(args: Array<String>) {
     println("Semilla: $i")
     val solucion1 = Solucion(citiesIds, Random(i), costoInicial)
     val tsp = Heuristica(graf1, solucion1)
+    tsp.temperaturaInicial()
     tsp.aceptacionPorUmbrales()
     if (tsp.evaluacion() <= mejorCosto){
       mejorCosto = tsp.evaluacion()
@@ -55,7 +56,7 @@ fun main(args: Array<String>) {
   }
   string += "Mejor Semilla: $mejorSemilla, Mejor Costo: $mejorCosto , Mejor Ruta: $mejorRuta"
   if(seedS != seedF) {
-    File("resultado/150-semillas-optimizado.txt").writeText(string)
+    File("resultado/resultado-actual.txt").writeText(string)
     println("Mejor Ruta: $mejorRuta")
     println("Mejor Costo: $mejorCosto")
   }

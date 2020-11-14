@@ -20,9 +20,7 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
     /** Epsilon usada en el algoritmo de obtención de la temperatura inicial */
     private val epsilonP = 0.00001
     /** Temperatura inicial del sistema */
-    private var tInicial = 8.0
-    /** Temperatura del sistema */
-    private var T = temperaturaInicial(tInicial)
+    private var T = 8.0
     /** Límite superior para las iteraciones al calcula un lote */
     private val L = 2000
     /** Factor de enfriamiento que determinará que tan rápido descenderá la temperatura T */
@@ -30,47 +28,11 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
     /** Porcentaje de soluciones vecinas*/
     private val P = 0.9
     /**  Valor de vecinos aceptados usados para calcular la temperatura inicial. */
-    private val vecinosAceptados = 3000
+    private val vecinosAceptados = 2000
     /** Número máximo de iteraciones al calcular un lote */
     private val maxIteraciones = L * 21
     /** Variable que irá guardando la mejor solución del sistema */
     private var mejorSolucionActual: Solucion = solucionInicial
-
-    /**
-     * Función que optimiza los resultados, revisando los vecinos de la solución
-     * @param s La solucion cuyo minimo local se le buscará
-     * @return El mínimo local de la solución
-     */
-    fun minimoLocal(s: Solucion): Solucion{
-        var esMejor = true
-        var solucionActual = s
-        var solucionMinima = s
-        val n = s.ruta.size
-        while(esMejor) {
-            esMejor = false
-            var costoActual = solucionActual.costo
-            var rutaActual = solucionActual.ruta
-            for (i in 0 until n - 2) {
-                for (j in i + 1 until n - 1) {
-                    var costoMinimo = solucionMinima.costo
-                    var nuevoCosto = g.getCostoOptimizado(i, j, costoActual, rutaActual)
-                    if (nuevoCosto < costoMinimo) {
-                        var nuevaRuta = rutaActual
-                        var aux = nuevaRuta[i]
-                        nuevaRuta[i] = nuevaRuta[j]
-                        nuevaRuta[j] = aux
-                        solucionMinima.ruta = nuevaRuta
-                        solucionMinima.costo = nuevoCosto
-                        esMejor = true
-                    }
-                }
-            }
-            if (esMejor) {
-                solucionActual = solucionMinima
-            }
-        }
-        return solucionActual
-    }
 
     /**
      * Función que sigue el algoritmo no determinista para calcular un lote
@@ -128,20 +90,17 @@ class Heuristica(g: Grafica, solucionInicial: Solucion) {
             //Se disminuye la temperatura multiplicándola con el factor de enfriamiento
             T *= phi
         }
-        //mejorSolucionActual = minimoLocal(mejorSolucionActual)
     }
 
     /**
      * Función que crea la temperatura inicial del sistema
-     * @param temperatura Temperatura inicial
      * @return T La temperatura del sistema que aumenta la probabilidad de que la heurística
      * pueda desplazarse rápidamente
      */
-    fun temperaturaInicial(temperatura: Double) :Double{
+    fun temperaturaInicial() :Double{
         val T1: Double
         val T2: Double
         val s = solucionActual
-        var T = temperatura
         var p = porcentajeAceptado(s, T)
         if (abs(P - p) < epsilonP){
             return T
