@@ -1,10 +1,17 @@
 # Proyecto 1 Heurísticas: Problema del agente viajero usando recocido simulado con aceptación por umbrales
 
 Se necesita tener gradle en versión 6 o mayor
+### Reporte
 
+El reporte se encuentra [aquí](/reporte/reporte.pdf)
 
 ### Generar documentación
-Para generar documentación usar ./gradlew dokkaHtml y dentro de build/dokka aparecerá la documentación
+Para generar documentación usar  
+
+```bash
+$ ./gradlew dokkaHtml
+```
+y dentro de build/dokka aparecerá la documentación
 
 ### Ejecución
 Se le tendrá que pasar al programa un archivo con la lista de ciudades, el inicio de las semillas y el final de ellas. 

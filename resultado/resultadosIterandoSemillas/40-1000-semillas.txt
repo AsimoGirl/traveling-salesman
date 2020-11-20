@@ -1,4 +1,5 @@
 Evaluacion con 1000 semillas
+Costo Inicial: 3305585.454990047
 Semilla: 0, Costo: 0.24461097888493036
 Semilla: 1, Costo: 0.27111439071156035
 Semilla: 2, Costo: 0.2482192497636461
